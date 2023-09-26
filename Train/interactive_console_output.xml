@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230918 09:49:13.650" rpa="false" schemaversion="4">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\ekate\.vscode\extensions\robocorp.robotframework-lsp-1.11.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Log" library="BuiltIn">
+<arg>${query_param}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230918 09:49:14.650" level="FAIL">Variable '${query_param}' not found.</msg>
+<status status="FAIL" starttime="20230918 09:49:14.648" endtime="20230918 09:49:14.651"/>
+</kw>
+<kw name="GET">
+<var>${response}</var>
+<arg>url=${Rest_server}/v1/access/${accessId}</arg>
+<arg>headers=${header}</arg>
+<status status="NOT RUN" starttime="20230918 09:49:14.653" endtime="20230918 09:49:14.653"/>
+</kw>
+<kw name="Status Should Be">
+<arg>200</arg>
+<status status="NOT RUN" starttime="20230918 09:49:14.657" endtime="20230918 09:49:14.657"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.json()}[content][0][resourceId]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230918 09:49:14.657" endtime="20230918 09:49:14.657"/>
+</kw>
+<for flavor="IN">
+<var>${testusers}</var>
+<value>@{response.json()}[content]</value>
+<iter>
+<var name="${testusers}"/>
+<kw name="Log" library="BuiltIn">
+<arg>${testusers}[resourceId]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230918 09:49:14.658" endtime="20230918 09:49:14.658"/>
+</kw>
+<status status="NOT RUN" starttime="20230918 09:49:14.658" endtime="20230918 09:49:14.658"/>
+</iter>
+<status status="NOT RUN" starttime="20230918 09:49:14.657" endtime="20230918 09:49:14.658"/>
+</for>
+<status status="PASS" starttime="20230918 09:49:13.682" endtime="20230918 09:49:29.254"/>
+</kw>
+<status status="PASS" starttime="20230918 09:49:13.682" endtime="20230918 09:49:29.254"/>
+</test>
+<status status="PASS" starttime="20230918 09:49:13.650" endtime="20230918 09:49:29.255"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

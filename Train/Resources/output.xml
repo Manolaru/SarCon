@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230922 11:23:33.626" rpa="false" schemaversion="4">
+<suite id="s1" name="Get Resource Access" source="C:\Users\ekate\OneDrive\Documents\Bitwards_autom\Visual_Code\Train\Resources\get_resource_access.robot">
+<test id="s1-t1" name="Get resource access" line="10">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=${Rest_server}/v1/resources/${resourceId}/access</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230922 11:23:35.884" level="INFO">GET Request : url=https://mobile-access-api.test.bitwardit.com/v1/resources/00000009C4D9/access 
+ path_url=/v1/resources/00000009C4D9/access 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'X-Api-Key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1'} 
+ body=None 
+ </msg>
+<msg timestamp="20230922 11:23:35.884" level="INFO">GET Response : url=https://mobile-access-api.test.bitwardit.com/v1/resources/00000009C4D9/access 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 22 Sep 2023 08:23:22 GMT', 'Content-Type': 'application/json', 'Content-Length': '4513', 'Connection': 'keep-alive', 'x-amzn-RequestId': '828bb0dd-ab2f-4e2e-8c08-96a974a6e27f', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-amz-apigw-id': 'LplG6FsdjoEFTTA=', 'X-Amzn-Trace-Id': 'Root=1-650d4ef8-54190f0b750851d813670edf;Sampled=0;lineage=bbeb82c8:0'} 
+ body={"content":[{"accessId":885431,"validFrom":"2023-07-09T21:00:00.000+00:00","validTo":"2025-07-10T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"test2+tc5@bitwards.fi","username":"test2+tc5@bitwards.fi"},{"accessId":884790,"validFrom":"2023-05-29T21:00:00.000+00:00","validTo":"2023-05-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"janne.jussila+testadmin@bitwards.fi","username":"janne.jussila+testadmin@bitwards.fi"},{"accessId":640576,"validFrom":"2020-01-06T22:00:00.000+00:00","validTo":"2020-02-08T21:59:00.000+00:00","resourceId":"00000009C4D9","email":"ismo.harjunmaa+test+admin2@bitwards.fi","username":"ismo.harjunmaa+test+admin2@bitwards.fi"},{"accessId":885166,"validFrom":"2023-06-13T21:00:00.000+00:00","validTo":"2023-06-14T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"viacheslav.filonenko@bitwards.fi","username":"viacheslav.filonenko@bitwards.fi"},{"accessId":884792,"validFrom":"2023-05-29T21:00:00.000+00:00","validTo":"2023-05-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"ekaterina.ivanova+reg_2@bitwards.fi","username":"ekaterina.ivanova+reg_2@bitwards.fi"},{"accessId":884793,"validFrom":"2023-05-29T21:00:00.000+00:00","validTo":"2023-05-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"viacheslav.filonenko@bitwards.fi","username":"viacheslav.filonenko@bitwards.fi"},{"accessId":826076,"validFrom":"2021-08-29T21:00:00.000+00:00","validTo":"2021-08-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"niklas+test7@bitwards.fi","username":"niklas+test7@bitwards.fi"},{"accessId":886162,"validFrom":"2023-09-05T21:00:00.000+00:00","validTo":"2023-09-22T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"viacheslav.filonenko@bitwards.fi","username":"viacheslav.filonenko@bitwards.fi"},{"accessId":884795,"validFrom":"2023-05-29T21:00:00.000+00:00","validTo":"2023-05-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"jonna.kaila@bitwards.fi","username":"jonna.kaila@bitwards.fi"},{"accessId":884796,"validFrom":"2023-05-29T21:00:00.000+00:00","validTo":"2023-05-30T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"niklas+1605@bitwards.fi","username":"niklas+1605@bitwards.fi"},{"accessId":830353,"validFrom":"2021-11-07T22:00:00.000+00:00","validTo":"2021-11-08T21:59:00.000+00:00","resourceId":"00000009C4D9","email":"niklas+0206@bitwards.fi","username":"niklas+0206@bitwards.fi"},{"accessId":809044,"validFrom":"2021-05-29T12:00:00.000+00:00","validTo":"2021-06-10T12:01:00.000+00:00","resourceId":"00000009C4D9","email":"mathias.brandtberg+extadmin@bitwards.fi","username":"mathias.brandtberg+extadmin@bitwards.fi"},{"accessId":809046,"validFrom":"2021-07-01T12:00:00.000+00:00","validTo":"2021-09-10T12:01:00.000+00:00","resourceId":"00000009C4D9","email":"mathias.brandtberg+extadmin@bitwards.fi","username":"mathias.brandtberg+extadmin@bitwards.fi"},{"accessId":809796,"validFrom":"2021-02-01T22:00:00.000+00:00","validTo":"2021-06-01T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"sirkku.liukkonen@bitwards.fi","username":"sirkku.liukkonen@bitwards.fi"},{"accessId":829846,"validFrom":"2021-10-27T22:00:00.000+00:00","validTo":"2021-10-28T21:59:00.000+00:00","resourceId":"00000009C4D9","email":"niklas+0206@bitwards.fi","username":"niklas+0206@bitwards.fi"},{"accessId":879239,"validFrom":"2022-09-08T21:00:00.000+00:00","validTo":"2022-09-29T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"ekaterina.ivanova+case1@bitwards.fi","username":"ekaterina.ivanova+case1@bitwards.fi"},{"accessId":879269,"validFrom":"2022-11-21T22:00:00.000+00:00","validTo":"2022-11-25T21:59:00.000+00:00","resourceId":"00000009C4D9","email":"ekaterina.ivanova+case6@bitwards.fi","username":"ekaterina.ivanova+case6@bitwards.fi"},{"accessId":873937,"validFrom":"2022-05-04T21:00:00.000+00:00","validTo":"2022-05-20T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"eljas.saastamoinen@gmail.com","username":"eljas.saastamoinen@gmail.com"},{"accessId":826603,"validFrom":"2022-03-30T21:00:00.000+00:00","validTo":"2022-03-31T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"mathias.brandtberg+regad@bitwards.fi","username":"mathias.brandtberg+regad@bitwards.fi"},{"accessId":885790,"validFrom":"2023-08-02T21:00:00.000+00:00","validTo":"2024-08-03T20:59:00.000+00:00","resourceId":"00000009C4D9","email":"ekaterina.ivanova+case243@bitwards.fi","username":"ekaterina.ivanova+case243@bitwards.fi"}],"totalElements":334,"totalPages":17,"number":0,"size":20,"first":true,"last":false}
+ 
+ </msg>
+<msg timestamp="20230922 11:23:35.884" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230922 11:23:33.774" endtime="20230922 11:23:35.884"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20230922 11:23:35.884" endtime="20230922 11:23:35.884"/>
+</kw>
+<doc>Retrieves a collection of all the access rights attached to this resource.</doc>
+<status status="PASS" starttime="20230922 11:23:33.774" endtime="20230922 11:23:35.884"/>
+</test>
+<status status="PASS" starttime="20230922 11:23:33.626" endtime="20230922 11:23:35.899"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Get Resource Access">Get Resource Access</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

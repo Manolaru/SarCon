@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230926 15:47:06.004" rpa="false" schemaversion="4">
+<suite id="s1" name="Add Multiple-Access" source="c:\Users\ekate\OneDrive\Documents\Bitwards_autom\Visual_Code\Train\access rights\add_multiple-access.robot">
+<test id="s1-t1" name="Create an Access" line="8">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>x-api-key=gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230926 15:47:06.189" level="INFO">${header} = {'x-api-key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1'}</msg>
+<status status="PASS" starttime="20230926 15:47:06.189" endtime="20230926 15:47:06.189"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>email=${user_email}</arg>
+<arg>resourceId=${resourceId}</arg>
+<arg>accesses=${accesses}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230926 15:47:06.189" level="INFO">${body} = {'email': 'ekaterina.ivanova+exter8998@bitwards.fi', 'resourceId': '00000009C4D9', 'accesses': '?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00'}</msg>
+<status status="PASS" starttime="20230926 15:47:06.189" endtime="20230926 15:47:06.189"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>url=${Rest_server}/v1/multiple-access${accesses}</arg>
+<arg>headers=${header}</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20230926 15:47:06.509" level="INFO">POST Request : url=https://mobile-access-api.test.bitwardit.com/v1/multiple-access?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00 
+ path_url=/v1/multiple-access?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1', 'Content-Length': '168', 'Content-Type': 'application/json'} 
+ body=b'{"email": "ekaterina.ivanova+exter8998@bitwards.fi", "resourceId": "00000009C4D9", "accesses": "?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00"}' 
+ </msg>
+<msg timestamp="20230926 15:47:06.509" level="INFO">POST Response : url=https://mobile-access-api.test.bitwardit.com/v1/multiple-access?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00 
+ status=400, reason=Bad Request 
+ headers={'Date': 'Tue, 26 Sep 2023 12:46:51 GMT', 'Content-Type': 'application/json', 'Content-Length': '103', 'Connection': 'keep-alive', 'x-amzn-RequestId': '9bfebaab-1610-486b-8312-5b401138e879', 'Access-Control-Allow-Origin': '*', 'x-amzn-ErrorType': 'BadRequestException', 'x-amz-apigw-id': 'L3XdVFRbjoEFbDQ='} 
+ body={"message":"[instance type (string) does not match any allowed primitive type (allowed: [\"array\"])]"} 
+ </msg>
+<msg timestamp="20230926 15:47:06.509" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://mobile-access-api.test.bitwardit.com/v1/multiple-access?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00</msg>
+<status status="FAIL" starttime="20230926 15:47:06.189" endtime="20230926 15:47:06.509"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230926 15:47:06.509" endtime="20230926 15:47:06.509"/>
+</kw>
+<doc>Creates a set of access rights for a resource</doc>
+<status status="FAIL" starttime="20230926 15:47:06.189" endtime="20230926 15:47:06.509">HTTPError: 400 Client Error: Bad Request for url: https://mobile-access-api.test.bitwardit.com/v1/multiple-access?accesses=1272&amp;fromDate=2023-09-20T00:00:00&amp;toDate=2023-10-15T00:00:00</status>
+</test>
+<status status="FAIL" starttime="20230926 15:47:06.013" endtime="20230926 15:47:06.509"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Add Multiple-Access">Add Multiple-Access</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

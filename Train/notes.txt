@@ -1,0 +1,28 @@
+${response.json()}[resourceId]
+
+${response.json()}[content][3][email] 
+
+${response.json()}[content][3][firstName]   -> rezultat:65999999999999978 Katja U iz loga
+
+
+*******
+${murga_email}    pedrito@bitwards.fi
+${murga_username}    quicks2021
+${murga_userExtId}    1265
+&{murga_user_01}    email=${murga_email}
+&{murga_user_02}    username=${murga_username}
+&{murga_user_03}    userExtId=${murga_userExtId}
+@{murga_users}    ${murga_user_01}    ${murga_user_02}    ${murga_user_03}
+
+${murga_validFrom_01}    2021-05-29T12:00:00.000+0000
+${murga_validTo_01}      2021-06-10T12:01:00.000+0000
+&{murga_access_01}    validFrom=${murga_validFrom_01}    validTo=${murga_validTo_01}
+${murga_validFrom_02}    2021-07-01T12:00:00.000+0000
+${murga_validTo_02}      2021-09-10T12:01:00.000+0000
+&{murga_access_02}    validFrom=${murga_validFrom_02}    validTo=${murga_validTo_02}
+@{murga_accesses}    ${murga_access_01}    ${murga_access_02}
+
+&{murga_body}    users=${murga_users}
+...              notifyUser=${True}
+...              resourceGroupId=${1}
+...              accesses=@{murga_accesses}
