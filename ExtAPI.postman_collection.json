@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "cd1beed7-5dc7-4366-aed4-2228d1f414f9",
+		"name": "ExtAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29827993",
+		"_collection_link": "https://martian-sunset-917764.postman.co/workspace/New-Team-Workspace~79b9ecfb-188a-4cd2-9b5f-4b8ebeef865c/collection/29827993-cd1beed7-5dc7-4366-aed4-2228d1f414f9?action=share&source=collection_link&creator=29827993"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test2+api512@bitwards.fi\",\r\n    \"passwordByUser\": true,\r\n    \"firstName\": \"Evelina\",\r\n    \"lastName\": \"Lindtman\",\r\n    \"extId\": \"14299\",\r\n    \"thirdPartyAuthentication\": false,\r\n    \"organization\": \"Bitwards\",\r\n    \"city\": \"Helsinki\",\r\n    \"additionalInfo\": \"Test\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{ext_API_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{bwdsExtAPI}}/users?searchValue=&sort=person.lastName,ASC&page=0",
+							"host": [
+								"{{bwdsExtAPI}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "searchValue",
+									"value": ""
+								},
+								{
+									"key": "sort",
+									"value": "person.lastName,ASC"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users GT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "xZMa3tBL7w71iRQWejHoZ8yVbPMx7oTT3AFgJvvH",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{bwdsExtAPI}}/users?sort=person.lastName,asc&size=100&page=0",
+							"host": [
+								"{{bwdsExtAPI}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "person.lastName,asc"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "100"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/users/mathias.brandtberg%2Bbwusr%40bitwards.fi/access"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user access extId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/users/ext-id/3320/access"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user access summary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/users/mathias.brandtberg%2Bmobidadmin%40bitwards.fi/access-summary"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Password201\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/users/mathias.brandtberg%2Bi%40bitwards.fi/password"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by ext id",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Brandtberg\",\r\n    \"extId\": \"editest369852\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/users/ext-id/ext3123"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user by email",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organization\": \"org2\",\r\n    \"extId\": \"3232\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/users/mathias.brandtberg+deed@bitwards.fi/"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/users/mathias.brandtberg%2Bexter4%40bitwards.fi"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user extid",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/users/ext-id/eid5/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resource",
+			"item": [
+				{
+					"name": "Get resources",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resources"
+					},
+					"response": []
+				},
+				{
+					"name": "Get resources codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resources/00000009C4D9/codes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get resource access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resources/00000009C4D9/access"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "Get logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": {
+							"raw": "{{bwdsExtAPI}}/logs?resources=00000005BE14&fromDate=2020-09-01T00:00:00&toDate=2023-10-05T00:00:00",
+							"host": [
+								"{{bwdsExtAPI}}"
+							],
+							"path": [
+								"logs"
+							],
+							"query": [
+								{
+									"key": "resources",
+									"value": "00000005BE14"
+								},
+								{
+									"key": "fromDate",
+									"value": "2020-09-01T00:00:00"
+								},
+								{
+									"key": "toDate",
+									"value": "2023-10-05T00:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get logs without gw",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsdWlzLmdvbnphbGV6QGJpdHdhcmRzLmZpIiwicm9sZSI6IlJPTEVfQURNSU4iLCJtb2JpZFJvbGUiOiJST0xFX01PQklMRUlEVVNFUiIsImlhdCI6MTY0OTk0NzUyNX0.hrROY2OkCXQ8iF3fSoMurnrqLfFhxHnVryi56q71jNaXZLktg8Y3va5UDPoK5dAK_6HJk61TxUwHd38Al0cARg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/extApi/logs?resources=00000005BE14&fromDate=2020-09-01T00:00:00&toDate=2023-10-05T00:00:00",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"extApi",
+								"logs"
+							],
+							"query": [
+								{
+									"key": "resources",
+									"value": "00000005BE14"
+								},
+								{
+									"key": "fromDate",
+									"value": "2020-09-01T00:00:00"
+								},
+								{
+									"key": "toDate",
+									"value": "2023-10-05T00:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Access Rights",
+			"item": [
+				{
+					"name": "Create access",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" :\"mathias.brandtberg+extpw2@bitwards.fi\",\r\n    \"firstName\": \"Mathias\",\r\n    \"lastName\": \"Brandtberg\",\r\n    \"resourceId\" : \"0000000003F4\",\r\n    \"validFrom\" : \"2023-02-16T05:00:00\",\r\n    \"validTo\" : \"2024-10-12T12:01:00\",\r\n    \"notifyUser\": true,\r\n    \"extId\": \"00124\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/access"
+					},
+					"response": []
+				},
+				{
+					"name": "Create multiple access",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" :\"mathias.brandtberg+extusr@bitwards.fi\",\r\n    \"resourceId\" : \"0000000531B8\",\r\n    \"accesses\":[\r\n        {    \r\n            \"validFrom\":\"2022-09-11T12:00:00\",\r\n            \"validTo\": \"2023-10-17T20:00:00\"\r\n        },\r\n        {   \r\n            \"validFrom\": \"2023-10-20T12:00:00\",\r\n            \"validTo\": \"2024-11-18T20:00:00\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/multiple-access"
+					},
+					"response": []
+				},
+				{
+					"name": "Create resource group access",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"users\":[\r\n      {\r\n         \"email\":\"ekaterina.ivanova+exter8998@bitwards.fi\"\r\n      }\r\n   ],\r\n   \"notifyUser\":true,\r\n   \"resourceGroupId\":1258,\r\n   \"accesses\":[\r\n      {\r\n         \"validFrom\":\"2023-01-23T00:00:00+02:00\",\r\n         \"validTo\":\"2023-10-23T23:59:00+02:00\"\r\n      },\r\n      {\r\n         \"validFrom\":\"2023-01-24T00:00:00+02:00\",\r\n         \"validTo\":\"2023-10-24T23:59:00+02:00\"\r\n      }\r\n   ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/multiple-user-resource-group-access"
+					},
+					"response": []
+				},
+				{
+					"name": "Update access",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mathias.brandtberg+bwusr@bitwards.fi\",\r\n    \"resourceId\": \"0000000531B8\",\r\n    \"validFrom\": \"2022-09-20T04:00:00\",\r\n    \"validTo\": \"2025-10-15T04:00:00\",\r\n    \"firstName\": \"Mathias\",\r\n    \"lastName\": \"Brandtberg\",\r\n    \"notifyUser\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/access/830273"
+					},
+					"response": []
+				},
+				{
+					"name": "Get access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/access/3807651"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete access",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/access/886441"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Access Code",
+			"item": [
+				{
+					"name": "Create access code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resourceId\": \"000000051B10\",\r\n    \"validFrom\": \"2022-12-14T04:00:00\",\r\n    \"validTo\": \"2022-12-24T04:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/codes"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete access code",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/codes/822388"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resource Group",
+			"item": [
+				{
+					"name": "Get resource groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resourcegroups"
+					},
+					"response": []
+				},
+				{
+					"name": "Create resource group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\":\"Training_Postman\",\r\n   \"description\":\"Test\",\r\n   \"resourceList\":[\r\n        {\r\n           \"resourceId\":\"000000002B19\"\r\n        },\r\n        {\r\n           \"resourceId\":\"b09085840154\"\r\n        }\r\n    ],\r\n   \"scheduleSupported\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{bwdsExtAPI}}/resourcegroups"
+					},
+					"response": []
+				},
+				{
+					"name": "Get resource group resources",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resourcegroups/1258/resources"
+					},
+					"response": []
+				},
+				{
+					"name": "Get resource group resources_access",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resourcegroups/1258/resources/00000009C4D9/access"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete resource group",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/resourcegroups/64"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Group",
+			"item": [
+				{
+					"name": "Get user groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/usergroups"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user group access rights",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/usergroups/371038/accessrights"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user group users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/usergroups/371093/users"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Get locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"type": "text",
+								"value": "{{ext_API_key}}"
+							}
+						],
+						"url": "{{bwdsExtAPI}}/locations"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceGroupId\":  \"1258\",\r\n    \"validFrom\" : \"2023-02-16T05:00:00\",\r\n    \"validTo\" : \"2024-10-12T12:01:00\"\r\n    \r\n}"
+				},
+				"url": "{{bwdsExtAPI}}/resourcegroups/1270/validFrom"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"resourceGroupId\":  \"1258\",\r\n    \"validFrom\" : \"2023-02-16T05:00:00\",\r\n    \"validTo\" : \"2024-10-12T12:01:00\"\r\n    \r\n}"
+				},
+				"url": "{{bwdsExtAPI}}/resourcegroups/1270/validFrom"
+			},
+			"response": []
+		}
+	]
+}
