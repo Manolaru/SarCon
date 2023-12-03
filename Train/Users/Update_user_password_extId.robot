@@ -1,8 +1,8 @@
 *** Settings ***
 Library         RequestsLibrary
 Library         Collections
-Resource    ../resource/Test_environment.robot
-Resource    ../resource/resource.robot
+Resource    ../resource/Test_environment.resource
+Resource    ../resource/variables.resource
 
 *** Test Cases ***
 

@@ -1,0 +1,2 @@
+This directory contains only the main scripts
+During the testing process, scripts will be selected and combined in accordance with the goals

@@ -1,8 +1,8 @@
 *** Settings ***
 Library         RequestsLibrary
 Library         Collections
-Resource    ../resource/Test_environment.robot
-Resource    ../resource/resource.robot
+Resource    ../resource/Test_environment.resource
+Resource    ../resource/variables.resource
 
 *** Test Cases ***
 
@@ -16,4 +16,4 @@ Update an Access
     ${response}    PATCH  url=${Rest_server}/v1/access/${accessId}   headers=${header}    json=${body}
 	Status Should Be    200
 
-	#GET  url=${Rest_server}/v1/users/${new_user_email}/access  
+	
