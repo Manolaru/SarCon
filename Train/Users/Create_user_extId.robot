@@ -6,11 +6,11 @@ Resource    ../resource/variables.resource
 
 *** Test Cases ***
 
-Create a User
-    [Documentation]    Creates a user
+Create an User
+    [Documentation]    Creates an user
     ${header}    Create Dictionary   x-api-key=gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1
     ${body}    Create Dictionary
-	...    email=${user_email}
+	#...    email=${user_email}
     ...    extId=${personExtId}
     ...    firstName=${firstName}
 	...    lastName=${lastName}

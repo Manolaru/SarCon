@@ -20,7 +20,7 @@ Update an User by email
 	...	phoneNumber=${phoneNumber}
 	...	organization=${organization}
 	...	additionalInfo=${additionalInfo}
-    ...	extid=${extid}
+    ...	extid=${personExtId}
 
 	   
     ${response}    PATCH  url=${Rest_server}/v1/users/${user_email}   headers=${header}    json=${body}

@@ -9,7 +9,7 @@ Resource    ../resource/variables.resource
 
 Get users access extid
    [Documentation]    Retrieves a collection of all the access rights for this user.
-   ${response}    GET  url=${Rest_server}/v1/users/${extid}/access    headers=${header}
+   ${response}    GET  url=${Rest_server}/v1/users/${personExtId}/access    headers=${header}
    
    Status Should Be    200
 

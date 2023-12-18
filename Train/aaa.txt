@@ -1,0 +1,33 @@
+This file is intended or your own ideas and notes that arise during the work process
+
+Folders
+1. Basic scripts (basic scripts written based on documentation. Optional fields are hashmarked)
+2. Common tests (positive test flows)
+3. Testing for concrete part ()
+    - optional fields
+    - appropriate values
+
+
+All tests are created from those written based on the documentation.
+
+Folder: Access Codes Folder: Single endnode tests File: Create_accesscodes.robot
+File: Delete_accesscodes.robot
+Folder: Combination tests File: Accescode_create_and_delete.robot
+Folder: Resources File: variables.resource
+File: documentation.txt
+---------
+Folder: Users Folder: Single endnode tests File: Add_user.robot
+File: Create_user.robot
+File: ………robot
+Folder: Combination tests File: ……...robot
+File: ………robot
+Folder: Resources File: variables.resource
+File: documentation.txt
+---------
+Folder: …….. Folder: Single endnode tests File: ………robot
+File: ………robot
+File: ………robot
+Folder: Combination tests File: ………robot
+File: ………robot
+Folder: Resources File: variables.resource
+File: documentation.txt

@@ -1,41 +1,43 @@
 *** Variables ***
 # ${new_user_email}    ekaterina.ivanova+exter8998@bitwards.fi
 # &{body}   email=${new_user_email}
-${user_email}    test2+api7711@bitwards.fi
-${extId}    12400
-${external_Id}    test2+papi7711@bitwards.fi
-${username}    TestPerson
+${user_email}    ekaterina.ivanova+exter81212@bitwards.fi
+${personExtId}    7894569
+#${extId}    testes000
+#${external_Id}    ekaterina.ivanova+exter8998@bitwards.fi
+${username}    AlmaDudin
 #${user}    test2+api504@bitwards.fi
-${firstName}    Alma
-${lastName}    Dudin
+${firstName}    Marika
+${lastName}    Nyblin
 ${passwordByUser}   ${True}
 ${thirdPartyAuthentication}    ${False}
-${validFrom}    2023-09-01T22:00:00
+${validFrom}    2023-10-01T22:00:00
 ${validTo}    2024-12-05T22:00:00
 ${resourceId}    00000009C4D9
 ${codeId}       881676
-${resourceName}    Industrial 150823
+${resourceName}    Industrial Test23
 ${resourceGroupExtId}    1246
-${resourceGroupId}    ${1272}
-${UserGroupId}    371117
+${resourceGroupId}    ${1274}
+${UserGroupId}    371093
+${userGroupextId}    testes000
 ${organization}    LeCount
 ${additionalInfo}   Information about
 ${streetAddress}    Professorintie
 ${city}    Turku
 ${zipCode}    12305
 ${phoneNumber}    0501235879
-${country}    Sweden
-${resourceGroupAccessId}    1270
-${accessId}        885165
-${GroupName}    EstGroups
+${country}    Norway
+${resourceGroupAccessId}    1277
+${accessId}        887166
+${GroupName}    group024
 ${description}    For testing something
 ${scheduleSupported}   ${False}
 ${query_param}    ?${searching}&${page}&${size}
 ${page}    page=1
 ${size}    size=10
 ${searching}    searchValue=aaa
-${fromDate}    2023-09-20T00:00:00
-${toDate}    2023-10-15T00:00:00
+${fromDate}    2023-10-20T00:00:00
+${toDate}    2023-12-15T00:00:00
 ${resources}    00000009C4D9
 ${query_par_res_log}    ?resources=${resources}&fromDate=${fromDate}&toDate=${toDate}
 ${accesses}    ?accesses=${resourceGroupId}&validFrom=${validFrom}&validTo=${validTo}
@@ -61,6 +63,24 @@ ${murga_validFrom_02}    2023-07-01T12:00:00.000+0000
 ${murga_validTo_02}      2023-09-10T12:01:00.000+0000
 &{murga_access_02}    validFrom=${murga_validFrom_02}    validTo=${murga_validTo_02}
 @{murga_accesses}    ${murga_access_01}    ${murga_access_02}
+${contactPersonName}    Ivanova, Ekaterina   
+${contactPersonEmail}    ekaterina.ivanova@bitwards.fi
+${contactPersonPhone}    +35840123456
+${contactPersonalId}    123abc
+${accountId}    881181
+${accountName}    Bitwards test
+${businessId}    11111-1
+${cardId}    FFFB0 
+${locationId}    400
+${cardType}    ID_ON_FILE
+${cardExtId}    card00012
+${cardOwnerExtId}    7894569
+${newvalidFrom}    2023-11-01T22:00:00
+${newvalidTo}    2024-11-05T22:00:00
+
+
+
+
 
 ### 
 #${searchingUser}    searchValue=${user}

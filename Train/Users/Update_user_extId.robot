@@ -21,9 +21,9 @@ Update an User by extId
 	...	phoneNumber=${phoneNumber}
 	...	organization=${organization}
 	...	additionalInfo=${additionalInfo}
-	...	extid=${extid}
+	#...	extid=${personExtId}
 
    
-    ${response}    PATCH  url=${Rest_server}/v1/users/${extid}   headers=${header}    json=${body}
+    ${response}    PATCH  url=${Rest_server}/v1/users/${external_id}   headers=${header}    json=${body}
 	Status Should Be    204
 

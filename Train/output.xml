@@ -1,72 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20230929 14:50:34.406" rpa="false" schemaversion="4">
-<suite id="s1" name="Create Access" source="c:\Users\ekate\OneDrive\Documents\Bitwards_autom\Visual_Code\Train\access rights\create_access.robot">
-<test id="s1-t1" name="Create an Access" line="9">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231218 16:04:29.208" rpa="false" schemaversion="4">
+<suite id="s1" name="Update card" source="c:\Users\ekate\OneDrive\Documents\Bitwards_autom\Visual_Code\test-extapi-access\Cards\Update_card.robot">
+<test id="s1-t1" name="Updates the validity for a collection of cards." line="9">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>x-api-key=gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230929 14:50:34.577" level="INFO">${header} = {'x-api-key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1'}</msg>
-<status status="PASS" starttime="20230929 14:50:34.565" endtime="20230929 14:50:34.577"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${lastName}</var>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20230929 14:50:34.577" level="INFO">${lastName} = </msg>
-<status status="PASS" starttime="20230929 14:50:34.577" endtime="20230929 14:50:34.577"/>
+<msg timestamp="20231218 16:04:29.380" level="INFO">${header} = {'x-api-key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1'}</msg>
+<status status="PASS" starttime="20231218 16:04:29.380" endtime="20231218 16:04:29.395"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
-<arg>email=${user_email}</arg>
-<arg>username=${username}</arg>
-<arg>firstName=${firstName}</arg>
-<arg>lastName=${lastName}</arg>
-<arg>notifyUser=${True}</arg>
-<arg>resourceId=${resourceId}</arg>
-<arg>validFrom=${validFrom}</arg>
-<arg>validTo=${validTo}</arg>
+<arg>extId=${cardExtId}</arg>
+<arg>validFrom=${newvalidFrom}</arg>
+<arg>validTo=${newvalidTo}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230929 14:50:34.584" level="INFO">${body} = {'email': 'test2+api513@bitwards.fi', 'username': 'TestPerson', 'firstName': 'Alma', 'lastName': '', 'notifyUser': True, 'resourceId': '00000009C4D9', 'validFrom': '2022-09-01T22:00:00', 'validTo': '2...</msg>
-<status status="PASS" starttime="20230929 14:50:34.583" endtime="20230929 14:50:34.584"/>
+<msg timestamp="20231218 16:04:29.395" level="INFO">${body} = {'extId': 'card00012', 'validFrom': '2023-11-01T22:00:00', 'validTo': '2024-11-05T22:00:00'}</msg>
+<status status="PASS" starttime="20231218 16:04:29.395" endtime="20231218 16:04:29.395"/>
 </kw>
-<kw name="POST" library="RequestsLibrary">
+<kw name="PATCH" library="RequestsLibrary">
 <var>${response}</var>
-<arg>url=${Rest_server}/v1/access</arg>
-<arg>headers=${header}</arg>
+<arg>url=${Rest_server}/v1/cards/${cardExtId}</arg>
+<doc>Sends a PUT request.</doc>
+<msg timestamp="20231218 16:04:29.653" level="INFO">PATCH Request : url=https://mobile-access-api.test.bitwardit.com/v1/cards/card00012 
+ path_url=/v1/cards/card00012 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20231218 16:04:29.653" level="INFO">PATCH Response : url=https://mobile-access-api.test.bitwardit.com/v1/cards/card00012 
+ status=403, reason=Forbidden 
+ headers={'Date': 'Mon, 18 Dec 2023 14:04:27 GMT', 'Content-Type': 'application/json', 'Content-Length': '42', 'Connection': 'keep-alive', 'x-amzn-RequestId': '529749f0-8240-4878-8916-73715fbdf991', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token', 'x-amzn-ErrorType': 'MissingAuthenticationTokenException', 'x-amz-apigw-id': 'QJGo0EgpDoEEgGw=', 'Access-Control-Allow-Methods': 'POST,OPTIONS'} 
+ body={"message":"Missing Authentication Token"} 
+ </msg>
+<msg timestamp="20231218 16:04:29.653" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://mobile-access-api.test.bitwardit.com/v1/cards/card00012</msg>
+<status status="FAIL" starttime="20231218 16:04:29.395" endtime="20231218 16:04:29.669"/>
+</kw>
+<kw name="headers=${header}">
 <arg>json=${body}</arg>
-<doc>Sends a POST request.</doc>
-<msg timestamp="20230929 14:50:35.684" level="INFO">POST Request : url=https://mobile-access-api.test.bitwardit.com/v1/access 
- path_url=/v1/access 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'x-api-key': 'gv2CLL8by32oXAE4Nwkzx6qE5TL7LKGR6r56w8I1', 'Content-Length': '220', 'Content-Type': 'application/json'} 
- body=b'{"email": "test2+api513@bitwards.fi", "username": "TestPerson", "firstName": "Alma", "lastName": "", "notifyUser": true, "resourceId": "00000009C4D9", "validFrom": "2022-09-01T22:00:00", "validTo": "2023-12-05T22:00:00"}' 
- </msg>
-<msg timestamp="20230929 14:50:35.684" level="INFO">POST Response : url=https://mobile-access-api.test.bitwardit.com/v1/access 
- status=200, reason=OK 
- headers={'Date': 'Fri, 29 Sep 2023 11:50:34 GMT', 'Content-Type': 'application/json', 'Content-Length': '207', 'Connection': 'keep-alive', 'x-amzn-RequestId': '181e2333-27e3-4e3a-ae55-b220ab57742e', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=31536000 ; includeSubDomains', 'x-amz-apigw-id': 'MBIBgEC7DoEFwbA=', 'X-Amzn-Trace-Id': 'Root=1-6516ba09-35aeab812da34dbf27fd97b4;Sampled=0;lineage=bbeb82c8:0'} 
- body={"accessId":886526,"validFrom":"2022-09-01T22:00:00.000+00:00","validTo":"2023-12-05T22:00:00.000+00:00","resourceId":"00000009C4D9","email":"test2+api513@bitwards.fi","username":"test2+api513@bitwards.fi"}
- 
- </msg>
-<msg timestamp="20230929 14:50:35.684" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230929 14:50:34.585" endtime="20230929 14:50:35.684"/>
+<status status="NOT RUN" starttime="20231218 16:04:29.672" endtime="20231218 16:04:29.672"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>200</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20230929 14:50:35.684" endtime="20230929 14:50:35.684"/>
+<status status="NOT RUN" starttime="20231218 16:04:29.672" endtime="20231218 16:04:29.672"/>
 </kw>
-<doc>Creates a set of access rights for a resource.</doc>
-<status status="PASS" starttime="20230929 14:50:34.565" endtime="20230929 14:50:35.684"/>
+<doc>Updates the validity for a collection of cards.</doc>
+<status status="FAIL" starttime="20231218 16:04:29.380" endtime="20231218 16:04:29.672">HTTPError: 403 Client Error: Forbidden for url: https://mobile-access-api.test.bitwardit.com/v1/cards/card00012</status>
 </test>
-<status status="PASS" starttime="20230929 14:50:34.413" endtime="20230929 14:50:35.701"/>
+<status status="FAIL" starttime="20231218 16:04:29.218" endtime="20231218 16:04:29.672"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Create Access">Create Access</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Update card">Update card</stat>
 </suite>
 </statistics>
 <errors>
